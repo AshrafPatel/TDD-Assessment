@@ -3,6 +3,8 @@ import {mount, shallow} from "enzyme"
 import App from "../src/App"
 import { render } from '@testing-library/react';
 import CurrencyForm from "./components/CurrencyForm/CurrencyForm";
+import DateForm from "./components/DateForm/DateForm"
+import DateLogger from "./components/DateLogger/DateLogger"
 
 describe("App Headline", () => {
     it("renders currency converter", () => {
@@ -21,14 +23,14 @@ describe("App Currency Form", () => {
 describe("App Date Form", () => {
   it("renders a date form", () => {
     const wrapper = shallow(<App/>)
-    expect(wrapper.equals(<div className="date-form-container"/>)).to.equal(true);
+    expect(wrapper.containsMatchingElement(<DateForm/>)).toEqual(true);
   })
 })
 
 describe("App Log Date", () => {
   it("renders a log", () => {
     const wrapper = shallow(<App/>)
-    expect(wrapper.equals(<div className="log-form-container"/>)).to.equal(true);
+    expect(wrapper.containsMatchingElement(<DateLogger/>)).toEqual(true);
   })
 })
 
