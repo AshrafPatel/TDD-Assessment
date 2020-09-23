@@ -1,0 +1,20 @@
+.dates-log-container {
+    background: #5c2fa0;
+    opacity: 0.9;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 900px;
+}
+
+.date-log-container {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    height: 30px;
+    padding: 20px 100px;
+    justify-content: center;
+    align-items: center;
+    border: 1px rgba(255, 255, 255, 0.171) solid;
+    border-radius: 10px;
+}

@@ -13,7 +13,7 @@ const FormTextBox = ({title, isSelectable, handleChange, name, value, type}) => 
                 </select> :
                 <h3>{title}</h3>
             }
-            <input className="form-text" type={type}  min={0} name={name} disabled={isSelectable} onChange={handleChange} value={value}/>
+            <input className="form-text" type={type} name={name} disabled={isSelectable} onChange={handleChange} value={value}/>
         </div>
     )
 }
