@@ -15,14 +15,20 @@ const DateLogger = (props) => {
     }
     return (
         <div className="dates-log-container">
-            {filteredDate.map(indexDate => {
+            {filteredDate.map((indexDate, idx) => {
                 const dateStr = new Date(indexDate.dateToday)
+                const {currency} = indexDate
+                const signCurrency = () => {
+                    if (currency === "EUR") return "€"
+                    else if (currency === "USD") return "$"
+                    else if (currency === "AUD") return " A$"
+                }
                 return (
-                <div className="date-log-container">
+                <div className="date-log-container" key={idx}>
                     <h3>Time Requested:<br/>{dateStr.toLocaleDateString()}</h3>
-                    <h3>Currency:<br/>{indexDate.currency}</h3>
-                    <h3>Amount Requested:<br/>{indexDate.amountRequested}</h3>
-                    <h3>Amount Offered:<br/>{indexDate.amountOffered}</h3>
+                    <h3>Amount Requested:<br/>£{indexDate.amountRequested}</h3>
+                    <h3>Currency:<br/>{currency}</h3>
+                    <h3>Amount Offered:<br/>{signCurrency() + indexDate.amountOffered}</h3>
                 </div>
                 )
             })}

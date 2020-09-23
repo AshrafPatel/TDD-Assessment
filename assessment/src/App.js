@@ -67,25 +67,36 @@ class App extends React.Component {
     }
   }
 
-  makeHistory = () => {
+  makeHistory = async() => {
     const date = Date.now()
     const amount = this.state.gbpTextbox
     const query = this.state.selectCurrency
     const {...currency} = this.state.currency;
     const result =  (this.state.gbpTextbox*currency[query]).toFixed(2)
     const tempHistory = [...this.state.history]
-    tempHistory.push({"dateToday": date, "currency": query,"amountRequested": amount,"amountOffered": result})
+    tempHistory.push({"dateToday": date, "currency": query,"amountRequested": parseFloat(amount).toFixed(2),"amountOffered": result})
+    localStorage.setItem("history", JSON.stringify(tempHistory))
     this.setState({
       history: tempHistory
-    }, localStorage.setItem("history", JSON.stringify(this.state.history)))
+    })
   }
 
-  loadDates = () => {
-    const history = localStorage.getItem("history")
+  loadDates = async() => {
+    const history = await JSON.parse(localStorage.getItem("history"))
+    console.log(history)
+    if (history !== null && this.state.history.length === 0) {
+      this.setState({
+        history: history
+      })
+    }
   }
 
   componentDidMount() {
+    this.loadDates();
+  }
 
+  shouldComponentUpdate(nextState) {
+    return this.state.history !== nextState.history;
   }
 
   render() {
