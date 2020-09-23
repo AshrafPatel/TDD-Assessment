@@ -1,0 +1,29 @@
+.currency-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.currency-text {
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border: 0px;
+    border-radius: 10px;
+    color: rgb(0, 34, 114);
+    font-size: 2rem;
+    height: 60px;
+    margin: 0 30px;
+    padding-left: 20px;
+    width: 300px;
+}
+
+h3 {
+    margin: 0 30px;
+    font-family: 'Roboto Slab', serif;
+    color: #f0f0f0;
+}
+
+select {
+    margin: 0 30px;
+    font-family: 'Roboto Slab', serif;
+    width: 50px;
+}
