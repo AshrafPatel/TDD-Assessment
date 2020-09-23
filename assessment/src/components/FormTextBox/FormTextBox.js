@@ -1,9 +1,9 @@
 import React from "react"
-import "./CurrencyFormTextBox.css"
+import "./FormTextBox.css"
 
-const CurrencyFormTextBox = ({title, isSelectable, handleChange, name, value}) => {
+const FormTextBox = ({title, isSelectable, handleChange, name, value, type}) => {
     return (
-        <div className="currency-text-container">
+        <div className="form-text-container">
             {
                 isSelectable ? 
                 <select onChange={handleChange} name="selectCurrency">
@@ -13,9 +13,9 @@ const CurrencyFormTextBox = ({title, isSelectable, handleChange, name, value}) =
                 </select> :
                 <h3>{title}</h3>
             }
-            <input className="currency-text" type="number" name={name} disabled={isSelectable} onChange={handleChange} value={value}/>
+            <input className="form-text" type={type}  min={0} name={name} disabled={isSelectable} onChange={handleChange} value={value}/>
         </div>
     )
 }
 
-export default CurrencyFormTextBox
+export default FormTextBox

@@ -1,9 +1,9 @@
-.currency-text-container {
+.form-text-container {
     display: flex;
     flex-direction: column;
 }
 
-.currency-text {
+.form-text {
     background: rgb(255, 255, 255);
     box-sizing: border-box;
     border: 0px;

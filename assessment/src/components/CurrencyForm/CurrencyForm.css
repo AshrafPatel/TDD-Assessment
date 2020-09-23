@@ -1,11 +1,8 @@
 .currency-form-container {
   background: #5c2fa0;
   opacity: 0.9;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   border-radius: 20px;
+  margin: 20px 300px;
 }
 
 .currency-container {
@@ -20,6 +17,10 @@
 }
 
 .fa-exchange-alt {
+  transform: scale(2);
+}
+
+.fa-long-arrow-alt-right {
   transform: scale(2);
 }
 
