@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react"
+import {mount} from "enzyme"
+import App from "../src/App"
 import { render } from '@testing-library/react';
-import App from './App';
 
-test('renders Currency Coverter', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/Currency Converter/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe("App", () => {
+    it("renders currency converter", () => {
+        const wrapper = mount(<App/>)
+        expect(wrapper.find("h1").text()).toContain("Currency Converter")
+    })
+})
